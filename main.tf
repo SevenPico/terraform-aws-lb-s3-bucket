@@ -57,8 +57,8 @@ data "aws_iam_policy_document" "default" {
 data "aws_partition" "current" {}
 
 module "s3_bucket" {
-  source                             = "cloudposse/s3-log-storage/aws"
-  version                            = "0.27.0"
+  source                             = "registry.terraform.io/cloudposse/s3-log-storage/aws"
+  version                            = "0.28.0"
   context                            = module.this.context
   acl                                = var.acl
   policy                             = join("", data.aws_iam_policy_document.default.*.json)
